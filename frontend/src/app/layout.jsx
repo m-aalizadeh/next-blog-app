@@ -1,6 +1,8 @@
 import vazirFont from "@/constants/localFont";
 import Header from "@/components/Header";
 import "@/styles/globals.css";
+import { Toaster } from "react-hot-toast";
+import AuthProvider from "@/context/Auth";
 
 export const metadata = {
   title: {
@@ -14,8 +16,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" dir="rtl">
       <body className={`${vazirFont.variable} font-sans min-h-screen`}>
-        <Header />
-        <div className="container xl:max-w-screen-xl">{children}</div>
+        <AuthProvider>
+          <Toaster />
+          <Header />
+          <div className="container xl:max-w-screen-xl">{children}</div>
+        </AuthProvider>
       </body>
     </html>
   );

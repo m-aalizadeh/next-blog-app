@@ -12,7 +12,7 @@ const nextConfig = {
     unoptimized: process.env.NODE_ENV === "development",
   },
   experimental: {
-    ppr: "incremental",
+    cacheComponents: true, // Enable Partial Prerendering
   },
 };
 
