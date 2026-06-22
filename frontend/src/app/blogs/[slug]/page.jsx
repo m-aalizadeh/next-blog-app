@@ -1,6 +1,8 @@
 import { getPostBySlug, getPosts } from "@/services/post";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import RelatedPost from "../_components/RelatedPost";
+import PostComment from "../_components/comment/PostComment";
 
 export const dynamicParams = false;
 export async function generateStaticParams() {
@@ -20,6 +22,7 @@ export default async function Post({ params }) {
   if (!post) {
     notFound();
   }
+  console.log("test", post.related.length);
   return (
     <div className="text-secondary-600 max-w-screen-md mx-auto">
       <h1 className="text-secondary-700 text-2xl font-bold mb-8">
@@ -34,8 +37,8 @@ export default async function Post({ params }) {
           src={post.coverImageUrl}
         />
       </div>
-      {/* {post.related.length > 0 ? <RelatedPost posts={post.related} /> : null}
-      <BlogComments post={post} /> */}
+      {post.related.length ? <RelatedPost posts={post.related} /> : null}
+      <PostComment post={post} />
     </div>
   );
 }
