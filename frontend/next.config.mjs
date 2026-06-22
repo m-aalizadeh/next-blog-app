@@ -11,9 +11,9 @@ const nextConfig = {
     ],
     unoptimized: process.env.NODE_ENV === "development",
   },
-  experimental: {
-    cacheComponents: true, // Enable Partial Prerendering
-  },
+  // experimental: {
+  //   cacheComponents: true, // Enable Partial Prerendering
+  // },
 };
 
 export default nextConfig;

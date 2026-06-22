@@ -3,9 +3,8 @@ import CoverImage from "./CoverImage";
 import Link from "next/link";
 import Author from "./Author";
 import PostInteraction from "./PostInteraction";
-import { getPosts } from "@/services/post";
-export default async function PostList() {
-  const posts = await getPosts();
+
+export default async function PostList({ posts }) {
   return posts.length ? (
     <div className="grid grid-cols-12 gap-8">
       {posts.map((post) => (

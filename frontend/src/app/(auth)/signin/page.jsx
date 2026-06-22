@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 import Link from "next/link";
 import * as yup from "yup";
 import { useAuth } from "@/context/Auth";
-
+import SpinnerMini from "@/ui/SpinnerMini";
 const schema = yup
   .object({
     email: yup.string().email("ایمیل نامعتبر است").required("ایمیل الزامی است"),
@@ -52,9 +52,13 @@ export default function page() {
           isRequired
           errors={errors}
         />
-        <Button type="submit" variant="primary" className="w-full">
-          تایید
-        </Button>
+        {isLoading ? (
+          <SpinnerMini />
+        ) : (
+          <Button type="submit" variant="primary" className="w-full">
+            تایید
+          </Button>
+        )}
         <Link href="/signup" className="text-secondary-500 mt-6 text-center">
           ثبت نام
         </Link>
