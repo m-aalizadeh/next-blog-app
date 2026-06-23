@@ -11,7 +11,7 @@ export default async function page({ params, searchParams }) {
   )}&categorySlug=${categorySlug}`;
   const cookieStore = await cookies();
   const options = setCookieOnReq(cookieStore);
-  const posts = await getPosts(queries, options);
+  const { posts } = await getPosts(queries, options);
   return (
     <div>
       {posts.length ? (
