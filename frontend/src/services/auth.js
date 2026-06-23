@@ -11,3 +11,7 @@ export async function signinApi(data) {
 export async function getUserApi(data) {
   return http.get("/user/profile", data).then(({ data }) => data.data);
 }
+
+export async function getAllUsersApi(options) {
+  return http.get("/user/list", options).then(({ data }) => data.data);
+}

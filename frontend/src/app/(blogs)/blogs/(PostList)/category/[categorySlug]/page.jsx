@@ -2,7 +2,7 @@ import { getPosts } from "@/services/post";
 import setCookieOnReq from "@/utils/setCookieOnReq";
 import { cookies } from "next/headers";
 import queryString from "query-string";
-import PostList from "app/blogs/_components/PostList";
+import PostList from "../../../_components/PostList";
 
 export default async function page({ params, searchParams }) {
   const { categorySlug } = await params;

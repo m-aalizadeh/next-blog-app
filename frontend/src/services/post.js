@@ -14,7 +14,7 @@ export async function getPosts(queries, options) {
     options,
   );
   const {
-    data: { posts = {} },
+    data: { posts = [] },
   } = await response.json();
   return posts;
 }
@@ -35,4 +35,10 @@ export async function getPostsByCategory(queries) {
     data: { posts = {} },
   } = await response.json();
   return posts;
+}
+
+export async function deletePostApi({ id, options }) {
+  return http
+    .delete(`/post/remove/${id}`, options)
+    .then(({ data }) => data.data);
 }
