@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { useAuth } from "@/context/Auth";
 import SpinnerMini from "@/ui/SpinnerMini";
+import Link from "next/link";
 // export const metadata = {
 //   title: "ثبت نام",
 // };
