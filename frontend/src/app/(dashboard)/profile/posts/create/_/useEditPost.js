@@ -1,12 +1,12 @@
-// import { deletePostApi } from "@/services/post";
-// import { useMutation } from "@tanstack/react-query";
+// import { editPostApi } from "@/services/post";
+// import { useMutation, useQueryClient } from "@tanstack/react-query";
 // import toast from "react-hot-toast";
 
-// export default function useDeletePost() {
+// export default function useEditPost() {
 //   const queryClient = useQueryClient();
 
-//   const { isPending: isDeleting, mutate: deletePost } = useMutation({
-//     mutationFn: deletePostApi,
+//   const { isPending: isEditing, mutate: editPost } = useMutation({
+//     mutationFn: editPostApi,
 //     onSuccess: (data) => {
 //       toast.success(data.message);
 //       queryClient.invalidateQueries({
@@ -16,5 +16,5 @@
 //     onError: (err) => toast.error(err?.response?.data?.message),
 //   });
 
-//   return { isDeleting, deletePost };
+//   return { isEditing, editPost };
 // }
